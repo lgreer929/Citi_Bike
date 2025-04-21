@@ -39,7 +39,7 @@ map_df = pd.read_csv('Map_df.csv', index_col = 0)
 
 if page == "Intro Page":
     st.markdown("#### This dashboard aims to provide helpful insights on the expansion problems Citi Bike currently faces.")
-    st.markdown("Right now, Citi Bike runs into a situation where customers complain about bikes not being available at certain times and locations. This analysis will look at the potential reasons behind this. The dashboard is separated into 5 sections:")
+    st.markdown("Right now, Citi Bike runs into situations where customers complain about bikes not being available when they want them at certain locations. Citi Bike has also recieved feedback that stations are too crowded for customers to return their rented bikes. This analysis will look at the potential reasons behind this. The dashboard is separated into 5 sections:")
     st.markdown("- Weather and Bike Usage")
     st.markdown("- Trips by Season")
     st.markdown("- Most Popular Stations")
@@ -82,12 +82,11 @@ elif page == 'Weather and Bike Usage':
 
     fig2.update_layout(
     title_text='Daily Bike Rides vs. Temperature',
-    title_x=0.5, # centers the title
     height=400
     )
 
     st.plotly_chart(fig2, use_container_width=True)
-    st.markdown("There is an obvious correlation between the rise and drop of temperatures and their relationship to the frequency of bike trips taken daily. As temperatures plunge, so does bike usage. This insight indicates that the shortage problem may be more of an issue in the warmer months, from May to October.")
+    st.markdown("There is an obvious correlation between the rise and drop in temperatures and their relationship to the frequency of bike trips taken daily. As temperatures plunge, so does bike usage. This insight indicates that the shortage problem may be more of an issue in the warmer months, from May to October.")
 
 # Trips by Season Page
     
@@ -106,7 +105,7 @@ elif page == 'Trips by Season':
     )
 
     st.plotly_chart(fig, use_container_width=True)
-    st.markdown("This chart shows a surprising trend that the shoulder seasons, Spring and Fall, have less riders than the summer and winter months. This warrents further investigation as perhaps it correlates with school schedules or popular tourism times.")
+    st.markdown("This chart shows a surprising trend that the shoulder seasons, Spring and Fall, have less riders than the Summer and Winter months. This warrents further investigation as perhaps it correlates with school schedules or popular tourism times. After a cursory level of research; the Summer and Winter months correlate with popular tourism times. NYC's population has also been steadily increasing since the decline during the COVID-19 pandemic. Citi Bike may need to look at how their business strategy adjusted/didn't adjust after the pandemic ended.")
 
 # Most Popular Stations Page
     
@@ -139,7 +138,7 @@ elif page == 'Most Popular Stations':
     )
 
     st.plotly_chart(fig3, use_container_width=True)
-    st.markdown("From the bar chart it is clear that there are some start stations that are more popular than others - in the top 3 we can see W 21 St & 6 Ave, West St & Chambers St, and Broadway & W 58 St. There is a big jump between the highest and lowest bars of the plot, indicating some clear preferences for the leading stations. This is a finding that we could cross reference with the interactive map that you can access through the side bar select box.")
+    st.markdown("From the bar chart it is clear that some start stations are more popular than others - in the top three we can see W 21 St & 6 Ave, West St & Chambers St, and Broadway & W 58 St. There is a big jump between the highest and lowest bars of the plot, indicating some clear preferences for the leading stations. This is a finding that we could cross reference with the interactive map that you can access through the side bar select box.")
 
 # Interactive Map with Aggregated Bike Trips Page
 
@@ -165,7 +164,7 @@ elif page == 'Interactive Map with Aggregated Bike Trips':
     st.markdown("#### Using the filter on the left hand side of the map we can check whether the most popular start stations also appear in the most popular trips.")
     st.markdown("The most popular start stations are:")
     st.markdown(" W 21 St & 6 Ave, West St & Chambers St, and Broadway & W 58 St. While having the aggregated bike trips filter enabled, we can see that W 21 St & 6 Ave and West St & Chambers St are popular start stations and account for the most commonly taken trips. However, this does not hold true for Broadway & W 58 St.")
-    st.markdown("The most common routes (>6,000) are in the heart of the city surrounding the tourist areas like the Empire State Building, Union Square, Grand Central Station, Broadway, etc.")
+    st.markdown("The most common routes (>6,000) are in the heart of the city surrounding the tourist areas like the Empire State Building, Union Square, Grand Central Station, Broadway, etc. It is worth noting, using the heatmap layer, that start stations are more dense in the center of city while end stations have fairly equal density inside and outside of the heart of the city. So, adding more stations in the center might aid overcrowded or empty stations.")
 
 else:
     
@@ -174,6 +173,7 @@ else:
     st.image(bikes)
     st.markdown("### Our analysis has shown that Citi Bike should focus on the following objectives moving forward:")
     st.markdown("- Add more stations to the locations in the heart of the city. A limitation of this study is how many bikes are able to be parked in each station. Perhaps rather than adding more stations, adding to current stations capacities would provide an adequate response.")
-    st.markdown("- Ensure that bikes are fully stocked in all these stations during the warmer months in order to meet the higher demand and reduce supply during other seasons.")
+    st.markdown("- Ensure that bikes are fully stocked in all these stations during the warmer months in order to meet the higher demand. Reduce supply during other seasons to reduce maintenance costs in proportion to demand.")
+    st.markdown("- Reevalute how Citi Bike adapted to changes after the COVID-19 pandemic. If supply was never restored in full, going back to the pre-pandemic volume metrics may prove helpful.")
 
 

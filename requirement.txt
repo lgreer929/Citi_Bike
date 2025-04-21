@@ -1,0 +1,9 @@
+streamlit
+pandas 
+numpy 
+plotly.express 
+plotly.graph_objects 
+matplotlib.pyplot 
+keplergl 
+streamlit_keplergl
+PIL

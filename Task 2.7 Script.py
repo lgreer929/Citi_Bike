@@ -48,7 +48,7 @@ if page == "Intro Page":
     st.markdown("The dropdown menu on the left 'Tab Selector' will take you to the different aspects of the analysis.")
 
     myImage = Image.open("Intro Photo.jpg") #source: https://unsplash.com/photos/bicycles-parked-on-the-side-of-a-street-KcOoW1Tv06Q
-    resized_image = myImage.resize((400, 300))  
+    resized_image = myImage.resize((600, 800))  
     st.image(resized_image, caption="Photo by Unsplash")
 
 # Weather and Bike Usage Page
@@ -171,7 +171,7 @@ else:
     
     st.header("Conclusions and Recommendations")
     bikes = Image.open("Conclusion Photo.jpg")  #source: https://unsplash.com/photos/several-vehicle-parked-beside-building-uzkjyuWEB7Y
-    resized_image2 = bikes.resize((400, 300))
+    resized_image2 = bikes.resize((600, 800))
     st.image(resized_image2, caption="Photo by Unsplash")
     st.markdown("### This analysis has shown that Citi Bike should focus on the following objectives moving forward:")
     st.markdown("- Add more stations to the locations in the heart of the city. A limitation of this study is how many bikes are able to be parked in each station. Perhaps rather than adding more stations, adding to current stations capacities would provide an adequate response.")
